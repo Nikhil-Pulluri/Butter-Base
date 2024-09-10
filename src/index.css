@@ -26,27 +26,27 @@ body
 #searchbar {
   position: relative;
   width: 100%;
-  display: flex; /* Flexbox to align elements properly */
-  align-items: center; /* Center vertically */
+  display: flex;
+  align-items: center;
 }
 
 #search-icon {
   position: absolute;
-  left: 10px; /* Adjusted for better placement */
-  top: 50%; /* Center icon vertically within the searchbar */
-  transform: translateY(-50%); /* Align icon perfectly */
-  width: 20px; /* Fixed width for the icon */
-  pointer-events: none; /* Allows clicking on the input without hitting the icon */
+  left: 10px;
+  top: 50%; 
+  transform: translateY(-50%); 
+  width: 20px; 
+  pointer-events: none; 
 }
 
 #search-input {
-  width: 100%; /* Take full width of the search bar container */
-  padding: 5px 10px 5px 30px; /* Add padding to prevent text overlap with icon */
-  height: 35px; /* Set a fixed height */
+  width: 100%;
+  padding: 5px 10px 5px 30px;
+  height: 35px; 
   background-color: rgba(160, 160, 160, 1);
   border: solid 1px black;
   border-radius: 8px;
-  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+  box-sizing: border-box; 
 }
 
 #search-input::placeholder {
