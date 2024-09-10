@@ -9,8 +9,6 @@ contract NFT_Market {
         string user_name;
         string password;
         string ipfs_image_hash; // for storing the profile image in ipfs
-        // string[] collection; // this can be included in ipfs contract where address can be mapped to collection array.
-
         bool artist;
         bool login_status;
   }
@@ -87,7 +85,7 @@ contract NFT_Market {
 
   // NFT Minting
 
-  struct NFT{
+struct NFT{
         uint256 likes;
         uint256 tokenId;
         address owner;
@@ -102,21 +100,15 @@ contract NFT_Market {
   event NFTMinted(address owner, uint256 tokenId, string name);
   event NFTTransferred(uint256 indexed tokenId, address indexed from, address indexed to);
 
+  NFT[] public nft_list;
+
 
 
   uint256 token_number = 0;
 
-  mapping(address => uint256[]) public owned_tokens;// tokens owned by any user
-
-  mapping(address => NFT[]) public user_nft_collection; // includes all nfts that are for sale and as well as not for sale
-
-  // mapping(address => NFT[]) public user_nft_sale; // for sale nfts of any user
-
-  // mapping(address => NFT[]) public user_nft_store; // not for sale but to store in ipfs
 
   mapping(uint256 => NFT) public token_nft; // we can get the mapped address from tokenId from this;
 
-  mapping(address => uint256) public nft_count;
 
 
   // utilities
@@ -124,9 +116,6 @@ contract NFT_Market {
     return token_nft[tokenId];
   }
 
-  function NFT_Count() public view returns(uint256){
-    return nft_count[msg.sender];
-  }
 
   function isTokenPresent(uint256 tokenId) public view returns (bool) {
       if (token_nft[tokenId].owner == address(0)) {
@@ -145,17 +134,11 @@ contract NFT_Market {
     uint256 tokenId = token_number;
     token_number++;
 
-    token_nft[tokenId] = NFT(tokenId, owner, block.timestamp, true, name, username, image_uri, sale);
+    token_nft[tokenId] = NFT(0, tokenId, owner, block.timestamp, true, name, username, image_uri, sale);
 
-    user_nft_collection[owner].push(token_nft[tokenId]);
 
-    // if(sale){
-    //   user_nft_sale[owner].push(token_nft[tokenId]);
-    // } else{
-    //   user_nft_store[owner].push(token_nft[tokenId]);
-    // }
 
-    owned_tokens[owner].push(tokenId);
+    nft_list.push(token_nft[tokenId]);
 
     emit NFTMinted(owner, tokenId, name);
 
@@ -172,37 +155,17 @@ contract NFT_Market {
 
     nft.owner = to;
 
-    // Transfer logic
-    _removeFromUserCollections(msg.sender, tokenId);
-    owned_tokens[to].push(tokenId);
-    nft_count[msg.sender]--;
-    nft_count[to]++;
+    nft_list[tokenId].owner = to;
+
+
+
+
+
 
     emit NFTTransferred(tokenId, msg.sender, to);
   }
 
 
-  function _removeFromUserCollections(address owner, uint256 tokenId) internal {
-        // Remove from owned_tokens
-        uint256[] storage tokens = owned_tokens[owner];
-        for (uint256 i = 0; i < tokens.length; i++) {
-            if (tokens[i] == tokenId) {
-                tokens[i] = tokens[tokens.length - 1];
-                tokens.pop();
-                break;
-            }
-        }
-
-
-        NFT[] storage nfts = user_nft_collection[owner];
-        for (uint256 i = 0; i < nfts.length; i++) {
-            if (nfts[i].tokenId == tokenId) {
-                nfts[i] = nfts[nfts.length - 1]; // Replace with the last element
-                nfts.pop(); // Remove the last element
-                break;
-            }
-        }
-  }
 
 
 
