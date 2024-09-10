@@ -8,12 +8,19 @@ body
 
 #header
 {
-    margin: 0 5px 0;
+    margin: 2% 0.5%;
     padding:0.5% 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+}
+
+#main
+{
+  display:flex;
+  flex-wrap: nowrap;
+  /* justify-content: space-between; */
 }
 
 #logo
@@ -74,7 +81,6 @@ body
     padding: 1.5%;  
     cursor: pointer;
     gap: 40px;
-    /* background-color: red; */
 }
 
 
@@ -82,4 +88,103 @@ body
 {
     width:50%;
     cursor: pointer;
+}
+
+#content
+{
+  display:flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+#content::-webkit-scrollbar
+{
+  display: none;
+}
+
+#card 
+{
+    width:40%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5%;
+}
+
+.user-info 
+{
+    display: flex;
+    align-items: center;
+}
+
+.user-info img 
+{
+    padding: 3% 0%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.art
+{
+    width: 100%;
+    border-radius: 2.5%;
+}
+
+.desc
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.art-details 
+{
+    margin-top: 10px;
+}
+
+.actions 
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.action-bt  
+{
+    width: 30%;
+    height: 30%;
+    margin-right: 15%;
+    cursor: pointer;
+}
+
+#buy:hover
+{
+    cursor:pointer;
+}
+
+#sidecontent
+{
+    display:flex;
+    flex-direction: column;
+    width: 15%; 
+}
+
+.tag
+{
+    padding: 5%;
+    background-color: rgba(160,160,160,0.3);
+    display:flex;
+    align-items: center;
+    gap: 4%;
+    border-radius: 8px;
+    flex-wrap: nowrap;
+    margin-bottom: 2%;
+}
+
+#tag img
+{
+    width: 18.5%;
+    border-radius: 50%;
 }
