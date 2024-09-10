@@ -1,0 +1,64 @@
+body 
+{
+    font-family: sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    height: 100vh;
+}
+
+#header
+{
+    margin: 0 5px 0;
+    padding:0.5% 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#logo
+{
+    margin-top:2%;
+    width:75%;
+    height: 75%;
+}
+
+#searchbar {
+  position: relative;
+  width: 100%;
+  display: flex; /* Flexbox to align elements properly */
+  align-items: center; /* Center vertically */
+}
+
+#search-icon {
+  position: absolute;
+  left: 10px; /* Adjusted for better placement */
+  top: 50%; /* Center icon vertically within the searchbar */
+  transform: translateY(-50%); /* Align icon perfectly */
+  width: 20px; /* Fixed width for the icon */
+  pointer-events: none; /* Allows clicking on the input without hitting the icon */
+}
+
+#search-input {
+  width: 100%; /* Take full width of the search bar container */
+  padding: 5px 10px 5px 30px; /* Add padding to prevent text overlap with icon */
+  height: 35px; /* Set a fixed height */
+  background-color: rgba(160, 160, 160, 1);
+  border: solid 1px black;
+  border-radius: 8px;
+  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+#search-input::placeholder {
+  color: rgba(76, 76, 76, 1);
+  text-align: center;
+}
+
+
+#login
+{
+    background-color: #FFB947;
+    padding: 0.5% 1.5%;
+    border: solid black 1px;
+    border-radius: 8.5%;
+}
