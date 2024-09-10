@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
+import Sidebar from './components/Navbar/Sidebar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,6 +11,11 @@ function App() {
   return (
     <>
       <Navbar/>
+      <div id="main">
+        <div id="sidebar">
+        <Sidebar/>
+        </div>
+      </div>
     </>
   )
 }
