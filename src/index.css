@@ -1,43 +1,44 @@
 body 
 {
-    font-family: sans-serif;
-    background-color: #1a1a1a;
-    color: white;
-    height: 100vh;
+  font-family: sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+  height: 100vh;
 }
 
 #header
 {
-    margin: 2% 0.5%;
-    padding:0.5% 2%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
+  margin: 2% 0.5%;
+  padding:0.5% 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 #main
 {
   display:flex;
   flex-wrap: nowrap;
-  /* justify-content: space-between; */
 }
 
 #logo
 {
-    margin-top:2%;
-    width:60%;
-    height: 60%;
+  margin-top:2%;
+  width:60%;
+  height: 60%;
 }
 
-#searchbar {
+#searchbar 
+{
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-#search-icon {
+#search-icon 
+{
   position: absolute;
   left: 10px;
   top: 50%; 
@@ -46,7 +47,8 @@ body
   pointer-events: none; 
 }
 
-#search-input {
+#search-input 
+{
   width: 100%;
   padding: 5px 10px 5px 30px;
   height: 35px; 
@@ -56,7 +58,8 @@ body
   box-sizing: border-box; 
 }
 
-#search-input::placeholder {
+#search-input::placeholder 
+{
   color: rgba(76, 76, 76, 1);
   text-align: center;
 }
@@ -64,36 +67,38 @@ body
 
 #login
 {
-    background-color: #FFB947;
-    padding: 0.5% 1.5%;
-    border: solid black 1px;
-    border-radius: 8.5%;
-    cursor: pointer;
-    font-weight: bolder;
+  background-color: #FFB947;
+  padding: 0.5% 1.5%;
+  border: solid black 1px;
+  border-radius: 8.5%;
+  cursor: pointer;
+  font-weight: bolder;
+  color: white;
 }
 
 #sidebar
 {
-    margin:2% 1.25%;
-    display:flex;
-    flex-direction: column;
-    width: 20%;
-    padding: 1.5%;  
-    cursor: pointer;
-    gap: 40px;
+  margin:2% 1.25%;
+  display:flex;
+  flex-direction: column;
+  width: 15%;
+  padding: 1.5%;  
+  height:100%;
+  gap: 40px;
 }
 
 
 #sidebar img
 {
-    width:50%;
-    cursor: pointer;
+  width:90%;
+  cursor: pointer;
 }
 
 #content
 {
   display:flex;
   flex-direction: column;
+  align-items: center;
   overflow-y: auto;
   height: 100vh;
 }
@@ -105,86 +110,99 @@ body
 
 #card 
 {
-    width:40%;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 5%;
+  width:45%;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5%;
 }
 
 .user-info 
 {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .user-info img 
 {
-    padding: 3% 0%;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 5px;
+  padding: 3% 0%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
 .art
 {
-    width: 100%;
-    border-radius: 2.5%;
+  width: 100%;
+  border-radius: 2.5%;
 }
 
 .desc
 {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .art-details 
 {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .actions 
 {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
 }
 
 .action-bt  
 {
-    width: 30%;
-    height: 30%;
-    margin-right: 15%;
-    cursor: pointer;
+  width: 30%;
+  height: 30%;
+  margin-right: 15%;
+  cursor: pointer;
 }
 
 #buy:hover
 {
-    cursor:pointer;
+  cursor:pointer;
 }
 
 #sidecontent
 {
-    display:flex;
-    flex-direction: column;
-    width: 15%; 
+  display:flex;
+  flex-direction: column;
+  width: 15%; 
+  margin-right: 3%;
 }
 
 .tag
 {
-    padding: 5%;
-    background-color: rgba(160,160,160,0.3);
-    display:flex;
-    align-items: center;
-    gap: 4%;
-    border-radius: 8px;
-    flex-wrap: nowrap;
-    margin-bottom: 2%;
+  padding: 2%;
+  background-color: rgba(160,160,160,0.3);
+  display:flex;
+  align-items: center;
+  gap: 4%;
+  border-radius: 8px;
+  flex-wrap: nowrap;
+  margin-bottom: 3%;
 }
 
 #tag img
 {
-    width: 18.5%;
-    border-radius: 50%;
+  width: 18.5%;
+  border-radius: 50%;
+}
+
+#picgrid
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
+}
+
+#picgrid img
+{
+  width: 30%;
 }

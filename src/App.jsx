@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 import Sidebar from './components/Sidebar'
 import Card from './components/Card'
 import Tag from './components/Tag'
+import PicGrid from './components/PicGrid'
 
 function App() {
   const [count, setCount] = useState(0)
